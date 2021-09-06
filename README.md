@@ -191,6 +191,13 @@ console.log( out );
 
 <section class="related">
 
+* * *
+
+## See Also
+
+-   [`@stdlib/utils/deep-pluck`][@stdlib/utils/deep-pluck]: extract a nested property value from each element of an object array.
+-   [`@stdlib/utils/pick`][@stdlib/utils/pick]: return a partial object copy containing only specified keys.
+
 </section>
 
 <!-- /.related -->
@@ -253,6 +260,14 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/utils-pluck/main/LICENSE
 
 [@stdlib/utils/copy]: https://github.com/stdlib-js/utils-copy
+
+<!-- <related-links> -->
+
+[@stdlib/utils/deep-pluck]: https://github.com/stdlib-js/utils-deep-pluck
+
+[@stdlib/utils/pick]: https://github.com/stdlib-js/utils-pick
+
+<!-- </related-links> -->
 
 </section>
 
