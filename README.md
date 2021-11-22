@@ -20,7 +20,7 @@ limitations under the License.
 
 # Pluck
 
-[![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] [![dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
 > Extract a property value from each element of an object array.
 
@@ -195,8 +195,8 @@ console.log( out );
 
 ## See Also
 
--   [`@stdlib/utils/deep-pluck`][@stdlib/utils/deep-pluck]: extract a nested property value from each element of an object array.
--   [`@stdlib/utils/pick`][@stdlib/utils/pick]: return a partial object copy containing only specified keys.
+-   <span class="package-name">[`@stdlib/utils/deep-pluck`][@stdlib/utils/deep-pluck]</span><span class="delimiter">: </span><span class="description">extract a nested property value from each element of an object array.</span>
+-   <span class="package-name">[`@stdlib/utils/pick`][@stdlib/utils/pick]</span><span class="delimiter">: </span><span class="description">return a partial object copy containing only specified keys.</span>
 
 </section>
 
@@ -247,8 +247,12 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/utils-pluck/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/utils-pluck?branch=main
 
+<!--
+
 [dependencies-image]: https://img.shields.io/david/stdlib-js/utils-pluck.svg
 [dependencies-url]: https://david-dm.org/stdlib-js/utils-pluck/main
+
+-->
 
 [chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
 [chat-url]: https://gitter.im/stdlib-js/stdlib/
