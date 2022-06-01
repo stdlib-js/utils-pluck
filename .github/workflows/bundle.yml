@@ -362,6 +362,18 @@ jobs:
         run: |
           git config --local user.email "noreply@stdlib.io"
           git config --local user.name "stdlib-bot"
+          
+      # Check whether job was triggered by new tag:
+      - name: 'Check whether job was triggered by new tag'
+        id: new-tag
+        run: |
+          VERSION=$(echo ${{ github.ref }} | sed -E 's/refs\/tags\/v?([0-9]+.[0-9]+.[0-9]+).*/\1/')
+          echo "Tag: $VERSION"
+          if [ -z "$VERSION" ]; then
+            echo "::set-output name=tag::false"
+          else
+            echo "::set-output name=tag::true"
+          fi
 
       # Check if remote `esm` branch exists:
       - name: 'Check if remote `esm` branch exists'
