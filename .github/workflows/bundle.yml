@@ -503,7 +503,7 @@ jobs:
 
       # If triggered by new tag, create a new bundle branch tag
       - name: 'If triggered by new tag, create a new bundle branch tag'
-        if: ${{ steps.new-tag.outputs.tag }} == true }}
+        if: steps.new-tag.outputs.tag
         run: |
           VERSION=${{ steps.new-tag.outputs.version }}
           echo "Creating new bundle branch tag of the form v$VERSION-esm"
