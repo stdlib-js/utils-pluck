@@ -367,7 +367,7 @@ jobs:
       - name: 'Check whether job was triggered by new tag'
         id: new-tag
         run: |
-          VERSION=$(echo ${{ github.ref }} | sed -E 's/refs\/tags\/v?([0-9]+.[0-9]+.[0-9]+).*/\1/')
+          VERSION=$(echo ${{ github.ref }} | sed -E -n 's/refs\/tags\/v?([0-9]+.[0-9]+.[0-9]+).*/\1/p')
           echo "Tag: $VERSION"
           if [ -z "$VERSION" ]; then
             echo "::set-output name=tag::false"
