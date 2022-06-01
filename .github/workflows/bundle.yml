@@ -495,7 +495,7 @@ jobs:
 
       # If not triggered by new tag, push changes to `esm` branch:
       - name: 'If not triggered by new tag, push changes to `esm` branch:'
-        if: ${{ steps.new-tag.outputs.tag }} == false }}
+        if: ${{ steps.new-tag.outputs.tag == false }}
         run: |
           SLUG=${{ github.repository }}
           echo "Pushing changes to $SLUG..."
@@ -505,6 +505,7 @@ jobs:
       - name: 'If triggered by new tag, create a new bundle branch tag'
         if: steps.new-tag.outputs.tag
         run: |
+          SLUG=${{ github.repository }}
           VERSION=${{ steps.new-tag.outputs.version }}
           echo "Creating new bundle branch tag of the form v$VERSION-esm"
           git tag -a v$VERSION-esm -m "v$VERSION-esm"
