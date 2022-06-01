@@ -432,20 +432,6 @@ jobs:
         with:
           target: 'esm'
 
-      # Check whether job was triggered by new tag:
-      - name: 'Check whether job was triggered by new tag'
-        id: check-for-tag
-        run: |
-          VERSION=$(echo ${{ github.ref }} | sed -E -n 's/refs\/tags\/?(v[0-9]+.[0-9]+.[0-9]+).*/\1/p')
-          if [ -z "$VERSION" ]; then
-            echo "Workflow job was not triggered by a new tag...."
-            echo "::set-output name=new-tag::false"
-          else
-            echo "Workflow job was triggered by a new tag: $VERSION"
-            echo "::set-output name=new-tag::true"
-            echo "::set-output name=version::$VERSION"
-          fi
-
       # Rewrite file contents:
       - name: 'Rewrite file contents'
         run: |
@@ -494,24 +480,22 @@ jobs:
         run: |
           git add -A
           git commit -m "Auto-generated commit"
-
-      # If triggered by new tag, create a new bundle branch tag
-      - name: 'If triggered by new tag, create a new bundle branch tag'
-        if: steps.check-for-tag.outputs.new-tag
+          
+      # Push changes to `esm` branch or create new branch tag:
+      - name: 'Push changes to `esm` branch or create new branch tag'
         run: |
           SLUG=${{ github.repository }}
-          VERSION=${{ steps.new-tag.outputs.version }}
-          echo "Creating new bundle branch tag of the form $VERSION-esm"
-          git tag -a $VERSION-esm -m "$VERSION-esm"
-          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$SLUG.git" $VERSION-esm
-
-      # If not triggered by new tag, push changes to `esm` branch:
-      - name: 'If not triggered by new tag, push changes to `esm` branch:'
-        if: ${{ steps.check-for-tag.outputs.new-tag == false }}
-        run: |
-          SLUG=${{ github.repository }}
-          echo "Pushing changes to $SLUG..."
-          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$SLUG.git" esm
+          VERSION=$(echo ${{ github.ref }} | sed -E -n 's/refs\/tags\/?(v[0-9]+.[0-9]+.[0-9]+).*/\1/p')
+          if [ -z "$VERSION" ]; then
+            echo "Workflow job was not triggered by a new tag...."
+            echo "Pushing changes to $SLUG..."
+            git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$SLUG.git" esm
+          else
+            echo "Workflow job was triggered by a new tag: $VERSION"
+            echo "Creating new bundle branch tag of the form $VERSION-esm"
+            git tag -a $VERSION-esm -m "$VERSION-esm"
+            git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$SLUG.git" $VERSION-esm
+          fi
 
       # Send status to Slack channel if job fails:
       - name: 'Send status to Slack channel in case of failure'
