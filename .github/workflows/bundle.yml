@@ -436,10 +436,12 @@ jobs:
       - name: 'Check whether job was triggered by new tag'
         id: new-tag
         run: |
-          VERSION=$(echo ${{ github.ref }} | sed -E -n 's/refs\/tags\/v?([0-9]+.[0-9]+.[0-9]+).*/\1/p')
+          VERSION=$(echo ${{ github.ref }} | sed -E -n 's/refs\/tags\/?(v[0-9]+.[0-9]+.[0-9]+).*/\1/p')
           if [ -z "$VERSION" ]; then
+            echo "Workflow job was not triggered by a new tag...."
             echo "::set-output name=tag::false"
           else
+            echo "Workflow job was triggered by a new tag: $VERSION"
             echo "::set-output name=tag::true"
             echo "::set-output name=version::$VERSION"
           fi
@@ -507,9 +509,9 @@ jobs:
         run: |
           SLUG=${{ github.repository }}
           VERSION=${{ steps.new-tag.outputs.version }}
-          echo "Creating new bundle branch tag of the form v$VERSION-esm"
-          git tag -a v$VERSION-esm -m "v$VERSION-esm"
-          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$SLUG.git" v$VERSION-esm
+          echo "Creating new bundle branch tag of the form $VERSION-esm"
+          git tag -a $VERSION-esm -m "$VERSION-esm"
+          git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$SLUG.git" $VERSION-esm
 
       # Send status to Slack channel if job fails:
       - name: 'Send status to Slack channel in case of failure'
