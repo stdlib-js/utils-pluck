@@ -47,8 +47,8 @@
   "devDependencies": {
     "@stdlib/bench": "^0.1.0",
     "@stdlib/math-base-special-round": "^0.1.0",
-    "@stdlib/random-base-randu": "^0.0.8",
-    "@stdlib/utils-copy": "^0.0.7",
+    "@stdlib/random-base-randu": "^0.1.0",
+    "@stdlib/utils-copy": "^0.1.0",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
     "istanbul": "^0.4.1",
     "tap-min": "git+https://github.com/Planeshifter/tap-min.git"
