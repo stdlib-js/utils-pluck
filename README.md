@@ -48,7 +48,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import pluck from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-pluck@esm/index.mjs';
+import pluck from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-pluck@v0.2.0-esm/index.mjs';
 ```
 
 #### pluck( arr, prop\[, options] )
@@ -169,7 +169,7 @@ var bool = ( arr[ 0 ] === out[ 0 ] );
 
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
 import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@esm/index.mjs';
-import pluck from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-pluck@esm/index.mjs';
+import pluck from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-pluck@v0.2.0-esm/index.mjs';
 
 var arr;
 var tmp;
