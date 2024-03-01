@@ -42,16 +42,17 @@
     "@stdlib/assert-is-boolean": "^0.2.1",
     "@stdlib/assert-is-plain-object": "^0.2.1",
     "@stdlib/string-format": "^0.2.1",
-    "@stdlib/types": "^0.3.2"
+    "@stdlib/types": "^0.3.2",
+    "@stdlib/error-tools-fmtprodmsg": "^0.2.1"
   },
   "devDependencies": {
     "@stdlib/math-base-special-round": "^0.2.1",
-    "@stdlib/random-base-randu": "^0.2.0",
-    "@stdlib/utils-copy": "^0.2.0",
+    "@stdlib/random-base-randu": "^0.2.1",
+    "@stdlib/utils-copy": "^0.2.1",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
     "istanbul": "^0.4.1",
     "tap-min": "git+https://github.com/Planeshifter/tap-min.git",
-    "@stdlib/bench-harness": "^0.2.0"
+    "@stdlib/bench-harness": "^0.2.1"
   },
   "engines": {
     "node": ">=0.10.0",
