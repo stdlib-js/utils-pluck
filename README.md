@@ -48,7 +48,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import pluck from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-pluck@deno/mod.js';
+import pluck from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-pluck@v0.2.2-deno/mod.js';
 ```
 
 #### pluck( arr, prop\[, options] )
@@ -164,7 +164,7 @@ var bool = ( arr[ 0 ] === out[ 0 ] );
 ```javascript
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/mod.js';
 import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@deno/mod.js';
-import pluck from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-pluck@deno/mod.js';
+import pluck from 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-pluck@v0.2.2-deno/mod.js';
 
 var arr;
 var tmp;
