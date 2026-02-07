@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/utils-pluck",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Extract a property value from each element of an object array.",
   "license": "Apache-2.0",
   "author": {
@@ -37,16 +37,16 @@
     "url": "https://github.com/stdlib-js/stdlib/issues"
   },
   "dependencies": {
-    "@stdlib/assert-has-own-property": "^0.2.2",
-    "@stdlib/assert-is-array": "^0.2.2",
-    "@stdlib/assert-is-boolean": "^0.2.2",
-    "@stdlib/assert-is-plain-object": "^0.2.2",
+    "@stdlib/assert-has-own-property": "^0.2.3",
+    "@stdlib/assert-is-array": "^0.2.3",
+    "@stdlib/assert-is-boolean": "^0.2.3",
+    "@stdlib/assert-is-plain-object": "^0.2.3",
     "@stdlib/string-format": "^0.2.3",
     "@stdlib/types": "^0.4.3",
-    "@stdlib/error-tools-fmtprodmsg": "^0.2.2"
+    "@stdlib/error-tools-fmtprodmsg": "^0.2.3"
   },
   "devDependencies": {
-    "@stdlib/math-base-special-round": "^0.3.0",
+    "@stdlib/math-base-special-round": "^0.3.1",
     "@stdlib/random-base-randu": "^0.2.2",
     "@stdlib/utils-copy": "^0.2.2",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
